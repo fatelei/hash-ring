@@ -1,6 +1,8 @@
 hash-ring
 =========
 
+[![Build Status](https://travis-ci.org/fatelei/hash-ring.svg?branch=master)]
+
 Hash ring implemented in JavaScript. Inspired by [http://www.tom-e-white.com//2007/11/consistent-hashing.html](http://www.tom-e-white.com//2007/11/consistent-hashing.html)
 
 - - -
