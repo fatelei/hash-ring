@@ -1,6 +1,6 @@
 {
   "name": "hash-ring",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Hash ring",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/fatelei/hash-ring.git"
+  },
+  "engines": {
+    "node": ">=4.2.1"
   },
   "keywords": [
     "hash",
@@ -19,6 +22,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fatelei/hash-ring/issues"
+  },
+  "dependencies": {
+    "long": "~3.0.1"
   },
   "devDependencies": {
     "mocha": "*"
