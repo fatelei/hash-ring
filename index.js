@@ -2,6 +2,6 @@
  * Main entry
  */
 
-var HashRing = require('./lib/ring');
+const HashRing = require('./lib/ring');
 
 module.exports = HashRing;
