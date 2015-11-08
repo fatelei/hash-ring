@@ -36,7 +36,7 @@ console.log(ring.getNode(nodes[0]));
 ```
 
 #### API
-+ addNodeAdd(node)
++ addNode(node)
 
 	Add a node to hash ring, node should a string.
 	
