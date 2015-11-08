@@ -7,58 +7,77 @@ Hash ring implemented in JavaScript. Inspired by [http://www.tom-e-white.com//20
 
 - - -
 
-#### Install
+# Install
 
 ```
 npm install hash-ring
-
 ```
 
-#### Test
+# APIs
+
+## HashRing
+
+Initialize hash ring instance.
+
++ nodes {Array}: Nodes
++ options {Object}: Config
+	+ hashMethod {String}: Specific hash method, `crc32` or `md5`, default is `crc32`
+	+ replicas {Int}: Virtual nodes number,. default is `128`
+
+### Usage
+
+```
+const HashRing = require('HashRing');
+let ring = new HashRing([
+	'1',
+	'2'
+], {
+	hashMethod: 'crc32',
+	replicas: 1
+});
+```
+
+## addNode
+
+Add a node to hash ring, node should a string.
+
++ node {String}: Node
+
+### Usage
+
+```
+const node = '3';
+ring.addNode(node);
+```
+
+## removeNode
+
+Remove a node from hash ring, node should a string
+
++ node {String}: Node
+
+### Usage
+
+```
+const node = '1';
+ring.removeNode(node);
+```
+	
+## getNode
+
+Get a node by specific key.
+
++ key {String}: Query key
+
+### Usage
+
+```
+const key = '5';
+console.log(ring.getNode(key));
+```
+
+## Test
 
 ```
 make test
 ```
-
-#### Usage
-
-```
-var nodes = [
-  '127.0.0.1:8000',
-  '127.0.0.1:8001'
-];
-
-var options = {
-  nodes: nodes
-};
-var ring = new Ring(options);
-console.log(ring.getNode(nodes[0])); 
-```
-
-#### API
-+ addNode(node)
-
-	Add a node to hash ring, node should a string.
-	
-	```
-	var node = '127.0.0.1:8003';
-	ring.addNode(node);
-	```
-	
-+ removeNode(node)
-
-	Remove a node from hash ring, node should a string
-	
-	```
-	var node = '127.0.0.1:8003';
-	ring.removeNode(node);
-	```
-	
-+ getNode(key)
-
-	Get a node by specific key.
-	
-	```
-	var key = '127.0.0.1:9000';
-	console.log(ring.getNode(key));
-	```
